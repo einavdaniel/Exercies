@@ -1,0 +1,55 @@
+<h2>Exrc 2\2</h2>
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+        <a class="nav-link active show" data-toggle="tab" data-target="#watch">$watch()</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" data-target="#digest">$digest()</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" data-target="#apply">$apply()</a>
+    </li>
+</ul>
+<div id="myTabContent" class="tab-content">
+    <div class="tab-pane fade active show" id="watch">
+        <p>
+            The $scope.watch() function creates a watch of some variable. </br>
+            It takes two arguments (value function, listener function). </br>
+            From this moment on, the watch will "watch over" the value, if it was changed, it will triger whatever listener function
+            set to deal with it.
+        </p>
+    </div>
+    <div class="tab-pane fade" id="digest">
+        <p>
+            tl;dr
+            <br> digest() activates all watch() functions in the scope.
+            <br>
+            <br> The $scope.$digest() function iterates through all the watches in the $scope object,
+            <br> and its child $scope objects (if it has any).
+            <br> When $digest() iterates over the watches, it calls the value function for each watch.
+            <br> If the value returned by the value function is different than the value it returned the last time it was called,
+            <br> the listener function for that watch is called.
+            <br>
+            <br> The $scope.$digest() function is being called by AngularJS in times it thinks it should,
+            <br> for example after button handler executed or AJAX call returns.
+            <br> Yet there might be few usecases in which we it won't be activated and we should do it manually.
+        </p>
+    </div>
+    <div class="tab-pane fade" id="apply">
+        <p>
+            The $scope.$apply() function takes a function as parameter which is executed,
+            <br> and after that $scope.$digest() is called internally.
+            <br> That makes it easier for you to make sure that all watches are checked, and thus all data bindings refreshed.
+            <br>
+            <br>
+        </p>
+    </div>
+</div>
+
+<div>
+    <center>
+        <footer>
+            <a href='http://tutorials.jenkov.com/angularjs/watch-digest-apply.html'> source </a>
+        </footer>
+    </center>
+</div>

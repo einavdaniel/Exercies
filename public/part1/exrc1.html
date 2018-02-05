@@ -1,0 +1,52 @@
+<h2>Exrc 1\1</h2>
+<form>
+    <fieldset>
+        <div class="form-group row">
+            <div class="col-sm-1">
+                <label for="ageNumerics" class="col-sm-1 col-form-label">Name:</label>
+            </div>
+            <div class="col-sm-1">
+                <div class="form-group">
+                    <label for="ageNumerics" class="col-sm-1 col-form-label">Age:</label>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <label for="ageNumerics" class="col-sm-1 col-form-label">Gender:</label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-1">
+                <input type="text" class="form-control" id="userName" placeholder="Enter name" ng-model="namePargraph">
+            </div>
+            <div class="col-sm-1">
+                <input class="form-control" id="ageNumerics" type="number" min="1" max="300">
+            </div>
+            <div class="col-sm-2">
+                <div class="custom-control custom-radio">
+                    <input type="radio" ng-model="gender" id="customRadio1" name="customRadio" class="custom-control-input" value="Male">
+                    <label class="custom-control-label" for="customRadio1"> M</label>
+                </div>
+                <div class="custom-control custom-radio">
+                    <input type="radio" ng-model="gender" id="customRadio2" name="customRadio" class="custom-control-input" value="Female">
+                    <label class="custom-control-label" for="customRadio2"> F</label>
+                </div>
+                <div class="custom-control custom-radio">
+                        <input type="radio" ng-model="gender" id="customRadio3" name="customRadio" class="custom-control-input" value="Unicorn">
+                        <label class="custom-control-label" for="customRadio3"> Other</label>
+                </div>
+
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-1">
+                {{namePargraph}}
+            </div>
+            <div class="col-sm-1">
+
+            </div>
+            <div class="col-sm-2">
+                {{gender}}
+            </div>
+        </div>
+    </fieldset>
+</form>

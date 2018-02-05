@@ -1,0 +1,11 @@
+<h2>Exrc 2\1</h2>
+<div ng-controller="ctrl1">
+    cat name: {{mainCat}}
+    <div  ng-controller="ctrl2">
+        cat name: {{mainCat}}
+    </div>
+    <div  ng-controller="ctrl3">
+        cat name: {{mainCat}}
+        <button id="childBtn" class="btn btn-secondary" ng-click="changeParentCat()">change parent cat</button>
+    </div>
+</div>
