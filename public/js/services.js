@@ -1,6 +1,6 @@
-var omerServices = angular.module('einavServices',[]);
+var einavServices = angular.module('einavServices',[]);
 
-omerServices.service('myService', function($http){
+einavServices.service('myService', function($http){
     var _self = this;
     _self.myData = [];
     
@@ -15,4 +15,14 @@ omerServices.service('myService', function($http){
     );
     
     _self.loading = true;
+});
+
+einavServices.service('checkerService', function(){
+    this.someText = "someText";
+    this.getData = function(){
+        return this.someText;
+    }
+    this.setData = function(newData){
+        this.someText = newData;
+    }
 });

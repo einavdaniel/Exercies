@@ -1,1 +1,52 @@
 <h2>Exrc 2\3</h2>
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+        <a class="nav-link active show" data-toggle="tab" data-target="#bootstrapHelpers">Config and Run</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" data-target="#services">Factory vs Service vs Provider</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" data-target="#serviceCheck">Service Check</a>
+    </li>
+</ul>
+<div id="myTabContent" class="tab-content">
+    <div class="tab-pane fade active show" id="bootstrapHelpers">
+        <p>
+            Both config([dependencies],function()) and run([dependencies],function()) are function ment to
+            <br>prevent accidental instantiation of service before they have been fully configured.
+            <br>
+            <br>- Config() block uses to inject only providers and constants.
+            <br>- Run() executed after the config() block, uses to inject only instances and constants.
+            <br> it's basickly the closest thing AngularJS got to main()
+        </p>
+        <div>
+            <center>
+                <footer>
+                    <a href='http://firstcrazydeveloper.com/Blogs/BlogView.html/46/importance-of-config-and-run-blocks-in-angularjs'> source </a>
+                </footer>
+            </center>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="services">
+        <p>
+            Both Factorys and Services are singeltones, but while a
+            <br>factory returns an object wich privides functions/properties, 
+            <br>the service IS providing functions and properties (better be constants/enums).
+            <br>
+            <br><b>providers - to be understood</b>
+        </p>
+    </div>
+    <div class="tab-pane fade" id="serviceCheck">
+        <div ng-controller="checkData">
+            <label>First check before change: {{data}}</label>
+            <br><label>First check after change: {{data}}</label>
+            <br><button id="childBtn" class="btn btn-secondary" ng-click="change()">change first</button>
+        </div>
+        <div ng-controller="checkData2">
+            <label>Second check before change: {{data}}</label>
+            <br><label>Second check after change: {{data}}</label>
+            <br><button id="childBtn" class="btn btn-secondary" ng-click="change()">fetch data</button>
+        </div>
+    </div>
+</div>
