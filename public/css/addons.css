@@ -8,3 +8,18 @@
     background-size:100% 100%;
     background-repeat: no-repeat;
 }
+
+.bronze{
+    background-color: #cd7f32;
+    color: rgb(201, 215, 230);
+}
+
+.silver{
+    background-color:#C0C0C0;
+    color: #3F3F3F;
+}
+
+.gold{
+    background-color: #FFD700;
+    color: rgb(2, 13, 77);
+}

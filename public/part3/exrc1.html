@@ -2,15 +2,49 @@
 <div class="form-group row" ng-controller="pt3ex1Ctrls">
     <div class="col-sm-12">
         <div class="form-group row">
-            <div class="col-sm-3">
+            <div class="col-sm-2">
                 <input type="text" class="form-control" id="mainTxt" placeholder="Enter some text" ng-model="mainTxt">
+            </div>
+            <div class="col-sm-2">
+                <input type="number" class="form-control" id="mainNumber" placeholder="numeric" ng-model="mainNumber">
+            </div>
+            <div class="col-sm-2">
+                <input type="date" class="form-control" id="mainDate" placeholder="date" ng-model="mainDate">
+            </div>
+            <div class="col-sm-2">
+                <input type="text" class="form-control" id="foodFilter" placeholder="food search" ng-model="foodFilter">
+            </div>
+            <div class="col-sm-2">
+                <input type="text" class="form-control" id="friendFilter" placeholder="friend search (job)" ng-model="friendFilter">
             </div>
         </div>
         <div class="form-group row">
-            <div class="col-sm-3">
+            <div class="col-sm-2">
                 <p> {{mainTxt | uppercase}}</p>
                 <p> {{mainTxt | lowercase}}</p>
-                <p> {{mainTxt | customFilter}}</p
+                <p> {{mainTxt | customFilter}}</p>
+                <p> {{mainTxt | capitalizeFilter}}</p>
+            </div>
+            <div class="col-sm-2">
+                <p>{{mainNumber | number : 2}}</p>
+                <p>{{mainNumber | currency : '€'}}</p>
+                <p>{{mainNumber | currency : '₪'}}</p>
+                <p>{{mainNumber | currency : '฿'}}</p>
+            </div>
+            <div class="col-sm-2">
+                <p> {{mainDate | date : 'medium'}}</p>
+                <p> {{mainDate | date : 'short'}}</p>
+                <p> {{mainDate | date : 'longDate'}}</p>
+                <p> {{mainDate | date : 'fullDate'}}</p>
+                <p> {{mainDate | date : 'shortTime'}}</p>
+                <p> {{mainDate | date : 'dd/MM/yyyy'}}</p>
+                <p> {{mainDate | date : 'EEE, MMM, a'}}</p>
+            </div>
+            <div class="col-sm-2">
+                <p ng-repeat="food in foodsList | filter : foodFilter">{{food}}</p>
+            </div>
+            <div class="col-sm-2">
+                <p ng-repeat="friend in friendsList | filter : {job : friendFilter}">{{friend.name}}</p>
             </div>
         </div>
     </div>

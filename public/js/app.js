@@ -3,7 +3,8 @@ var einavApp = angular.module('einavApp', [
     'einavCtrls',
     'pt1Ctrls',
     'pt2Ctrls',
-    'pt3Ctrls'
+    'pt3Ctrls',
+    'pt4Ctrls'
 ]);
 
 einavApp.config(function ($routeProvider) {
@@ -36,6 +37,15 @@ einavApp.config(function ($routeProvider) {
         })
         .when('/pt3/ex4', {
             templateUrl: '/part3/exrc4.html',
+        })
+        .when('/pt4/ex12', {
+            templateUrl: '/part4/exrc12.html',
+        })
+        .when('/pt4/ex4', {
+            templateUrl: '/part4/exrc4.html',
+        })
+        .when('/pt4/ex356', {
+            templateUrl: '/part4/exrc356.html',
         })
         .when('/404', {
             templateUrl: 'templates/404.html',

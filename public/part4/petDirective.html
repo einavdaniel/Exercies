@@ -1,0 +1,40 @@
+<div ng-form name="petForm">
+ <!-- <form name="petForm" ng-submit="printValues()"> -->
+      <fieldset>
+            <legend>Pet</legend>
+            <div class="form-group">
+                <label for="name">Pet name</label>
+                <input ng-model="petData.name" type="text" class="form-control" name="name" placeholder="Enter your pet name"
+                    ng-minlength="3" ng-maxlength="50" required>
+                <div ng-show="petForm.name.$touched && petForm.name.$invalid">
+                    <p class="text-danger" ng-show="petForm.name.$error.required">required</p>
+                    <p class="text-danger" ng-show="petForm.name.$error.minlength">too short</p>
+                    <p class="text-danger" ng-show="petForm.name.$error.maxlength">too long</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="age">Pet age</label>
+                <input ng-model="petData.age" type="number" class="form-control" name="age" min="0" max="200" required>
+                <div  ng-show="petForm.age.$touched && petForm.age.$invalid">
+                    <p class="text-danger" ng-show="petForm.age.$error.required">required</p>
+                    <p class="text-danger" ng-show="petForm.age.$error.min">can't be negative</p>
+                    <p class="text-danger" ng-show="petForm.age.$error.max">can't be alive</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="petType">Pet type:</label>
+                <select ng-model="petData.type" class="form-control" name="petType" required>
+                    <option>Dog</option>
+                    <option>Cat</option>
+                    <option>Bear</option>
+                    <option>GW Shark</option>
+                    <option>Unicorn</option>
+                </select>
+                <div ng-show="petForm.petType.$touched && petForm.petType.$invalid">
+                    <p class="text-danger" ng-show="petForm.petType.$error.required">required</p>
+                </div>
+            </div>
+          <!-- <button type="submit" class="btn btn-primary" ng-disabled="!petForm.$valid">Submit</button> -->
+         </fieldset>
+  <!-- </form> -->
+</div>
