@@ -1,0 +1,26 @@
+<h2>Exrc 7/1</h2>
+<div class="form-group row-sm-1">
+    <div class="col-sm-2">
+        <form name='myform' ng-submit="calculate()">
+            <label for="numerator">numerator:</label>
+            <input ng-model="numerator" type="number" class="form-control" name="numerator" required>
+            <label for="denominator">denominator:</label>
+            <input ng-model="denominator" type="number" class="form-control" name="denominator" required>
+            <div class="form-group row-sm-1" ng-if="showLoading">
+                <label>
+                    <strong>{{loadMsg}}</strong>
+                </label>
+            </div>
+            <div class="form-group row-sm-1" ng-if="showRes">
+                <label>result:</label>
+                {{result}}
+            </div>
+            <div class="form-group row-sm-1" ng-if="showErr">
+                <p class="text-danger">{{errMsg}}</p>
+            </div>
+            <div class="form-group row-sm-1">
+                <button type="submit" class="btn btn-primary" ng-disabled="!myform.$valid">Calculate</button>
+            </div>
+        </form>
+    </div>
+</div>

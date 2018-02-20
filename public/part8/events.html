@@ -1,0 +1,16 @@
+<h2>Exrc 8/1</h2>
+<div class="form-group row-sm-1">
+    <div class="col-sm-2">
+        <div ng-controller="ctrlA" class="form-group row-sm-1">
+            <p>text fom child event: {{text}}</p>
+            <div ng-controller="ctrlB" class="form-group row-sm-1">
+                <input ng-model="myText" type="text" class="form-control" placeholder="ctrlB">
+                <button class="btn btn-secondary" ng-click="myFunction()">Parent Event</button>
+            </div>
+            <div ng-controller="ctrlC" class="form-group row-sm-1">
+                <input ng-model="myText" type="text" class="form-control" placeholder="ctrlC">
+                <button class="btn btn-secondary" ng-click="myFunction()">Parent Event</button>
+            </div>
+        </div>
+    </div>
+</div>

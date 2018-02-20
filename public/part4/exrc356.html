@@ -1,19 +1,22 @@
 <h2>Exrc 4/3,5-6</h2>
 <div class="form-group row" ng-controller="pt3ex3Ctrls">
     <div class="col-sm-6">
-        <form name="myForm">
-            <div class="form-group row-sm-2">
-                <ul class="nav nav-tabs">
-                    <li class="nav-item">
-                        <a class="nav-link active show" data-toggle="tab" data-target="#exrc3">ng-show vs ng-if</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" data-target="#exrc4">(blank)</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" data-target="#exrc5">(blank)</a>
-                    </li>
-                </ul>
+        <div class="form-group row-sm-2">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active show" data-toggle="tab" data-target="#exrc3">ng-show vs ng-if</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" data-target="#exrc4">compile vs link vs controller</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" data-target="#exrc5">driective scope expression</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" data-target="#transcluding">Transclude</a>
+                </li>
+            </ul>
+            <div class="col-sm-10">
                 <div id="myTabContent" class="tab-content">
                     <div class="tab-pane fade active show" id="exrc3">
                         <p>
@@ -31,15 +34,94 @@
                     </div>
                     <div class="tab-pane fade" id="exrc4">
                         <p>
-
+                            <strong>Compile :</strong>
+                            <br>This is the phase where Angular actually compiles your directive.
+                            <br>This compile function is called just once for each references to the given directive.
+                            <br>For example, say you are using the ng-repeat directive. ng-repeat will have to look
+                            <br>up the element it is attached to, extract the html fragment that it is attached to and
+                            <br>create a template function.
+                            <br>
+                            <br>If you have used HandleBars, underscore templates or equivalent,
+                            <br>its like compiling their templates to extract out a template function.
+                            <br>To this template function you pass data and the return value of that function is the html
+                            <br>with the data in the right places.
+                            <br>
+                            <br>The compilation phase is that step in Angular which returns the template function.
+                            <br>This template function in angular is called the linking function.
+                            <br>
+                            <br>
+                            <strong>Linking phase :</strong>
+                            <br>
+                            <br>The linking phase is where you attach the data ( $scope ) to the linking
+                            <br>function and it should return you the linked html. Since the directive also specifies
+                            <br>where this html goes or what it changes, it is already good to go.
+                            <br>This is the function where you want to make changes to the linked html,
+                            <br>i.e the html that already has the data attached to it.
+                            <br>In angular if you write code in the linking function its generally the post-link function (by
+                            default).
+                            <br>It is kind of a callback that gets called after the linking function has linked the data with
+                            the template.
+                            <br>
+                            <br>
+                            <strong>Controller :</strong>
+                            <br>
+                            <br>The controller is a place where you put in some directive specific logic.
+                            <br>This logic can go into the linking function as well, but then you
+                            <br>would have to put that logic on the scope to make it "shareable".
+                            <br>The problem with that is that you would then be corrupting the scope with your directives
+                            <br>stuff which is not really something that is expected. So what is the alternative
+                            <br>if two Directives want to talk to each other / co-operate with each other?
+                            <br>Ofcourse you could put all that logic into a service and then make both these directives depend
+                            <br>on that service but that just brings in one more dependency.
+                            <br>The alternative is to provide a Controller for this scope ( usually isolate scope ? )
+                            <br>and then this controller is injected into another directive when that
+                            <br>directive "requires" the other one. See tabs and panes on the first page of angularjs.org for
+                            an example.
+                        </p>
+                        <div>
+                            <center>
+                                <footer>
+                                    <a href='https://stackoverflow.com/questions/15676614/link-vs-compile-vs-controller'> source </a>
+                                </footer>
+                            </center>
+                        </div>
                     </div>
                     <div class="tab-pane fade" id="exrc5">
                         <p>
- 
+                            <strong>@ or @attr</strong> - bind a local scope property to the value of DOM attribute (one way binding).
+                            <br><strong>= or =attr</strong> - set up a bidirectional binding between a local scope property and an expression
+                            passed via the attribute attr (two way binding).
+                            <br><strong>& or &attr</strong> - provides a way to execute an expression in the context of the parent scope (function
+                            binding).
                         </p>
+                        <div>
+                            <center>
+                                <footer>
+                                    <a href='https://docs.angularjs.org/api/ng/service/$compile#comprehensive-directive-api'> source </a>
+                                </footer>
+                            </center>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="transcluding">
+                        <p>
+                            Big words about moving the dom elements within a directive open and
+                            <br>close tags to another directive in a specific place.
+                            <br>
+                            <br>TL;DR:
+                            <br>In directive section - transclude:true
+                            <br>In directive template - &ltdiv ng-transclude&gt &lt/div&gt
+                        </p>
+                        <div>
+                            <center>
+                                <footer>
+                                    <a href='http://teropa.info/blog/2015/06/09/transclusion.html'> source </a>
+                                </footer>
+                            </center>
+                        </div>
                     </div>
                 </div>
             </div>
-        </form>
+        </div>
+
     </div>
 </div>
