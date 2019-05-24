@@ -1,4 +1,5 @@
 var einavApp = angular.module('einavApp', [
+    'ngMaterial',
     'ngRoute', 
     'einavCtrls',
     'pt1Ctrls',
@@ -8,7 +9,8 @@ var einavApp = angular.module('einavApp', [
     'pt5Ctrls',
     'pt6Ctrls',
     'pt7Ctrls',
-    'pt8Ctrls'
+    'pt8Ctrls',
+    'mdTestModule'
 ]);
 
 einavApp.config(function ($routeProvider) {
@@ -74,6 +76,10 @@ einavApp.config(function ($routeProvider) {
         .when('/pt8/events', {
             templateUrl: '/part8/events.html',
             controller: 'eventsCtrl'
+        })
+        .when('/md', {
+            templateUrl: '/AngularMaterialTest/mdTest.html',
+            controller: 'mdTestCtrl'
         })
         .when('/404', {
             templateUrl: 'templates/404.html',

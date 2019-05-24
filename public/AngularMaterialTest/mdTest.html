@@ -1,0 +1,46 @@
+<h1>hello {{name}}</h1>
+
+
+<div  class="md-padding" layout="row">
+<md-card>
+    <md-card-title>
+      <md-card-title-text>
+        <span class="md-headline">Battle Preferences</span>
+        <span class="md-subhead">Choose wisely if you want to win.</span>
+      </md-card-title-text>
+    </md-card-title>
+
+    <md-card-content>
+      <div layout="row" layout-align="space-between center">
+        <span>What is your favorite weapon?</span>
+        <md-select ng-model="weapon" placeholder="Weapon" class="md-no-underline">
+          <md-option value="axe">Axe</md-option>
+          <md-option value="sword">Sword</md-option>
+          <md-option value="wand">Wand</md-option>
+          <md-option value="pen">Pen?</md-option>
+        </md-select>
+      </div>
+
+      <div layout="row" layout-align="space-between center">
+        <span>What armor do you wear?</span>
+        <md-select ng-model="armor" placeholder="Armor" class="md-no-underline" required md-no-asterisk="false">
+          <md-option value="cloth">Cloth</md-option>
+          <md-option value="leather">Leather</md-option>
+          <md-option value="chain">Chainmail</md-option>
+          <md-option value="plate">Plate</md-option>
+        </md-select>
+      </div>
+
+      <div layout="row" layout-align="space-between center">
+        <span>How do you refresh your magic?</span>
+        <md-select ng-model="drink" placeholder="Drink" class="md-no-underline">
+          <md-option value="water">Water</md-option>
+          <md-option value="juice">Juice</md-option>
+          <md-option value="milk">Milk</md-option>
+          <md-option value="wine">Wine</md-option>
+          <md-option value="mead">Mead</md-option>
+        </md-select>
+      </div>
+    </md-card-content>
+  </md-card>
+</div>
