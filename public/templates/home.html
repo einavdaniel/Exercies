@@ -1,3 +1,33 @@
 <!-- <h1 ng-show="{{loading}}">Loading...</h1>
 <h1 ng-hide="{{loading}}">{{data}}</h1> -->
-<h1>home</h1>
+
+<h1>{{test}}</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-5">
+            <ui-select ng-model="selected.location" theme="bootstrap">
+                <ui-select-match placeholder="Select or search...">
+                    {{$select.selected}}
+                </ui-select-match>
+                <ui-select-choices repeat="loc in locations | filter: $select.search">
+                    <div ng-bind-html="loc |  highlight: $select.search"></div>
+                </ui-select-choices>
+            </ui-select>
+        </div>
+    </div>
+    <h3>FIRST SELECT {{selected.location}}</h3>
+    <div class="row">
+        <div class="col-sm-5">
+            <ui-select ng-model="selected.item" theme="bootstrap" on-select="popup($item,$model)">
+                <ui-select-match placeholder="Select or search...">
+                    {{$select.selected.name}}
+                </ui-select-match>
+                <ui-select-choices repeat="item.name as item in itemArray | filter: $select.search">
+                    <div ng-bind-html="item.name |  highlight: $select.search"></div>
+                </ui-select-choices>
+            </ui-select>
+            <h3>SECOND SELECT {{selected.item.id}}, {{selected.item.name}}</h3>
+        </div>
+    </div>
+</div>
+
