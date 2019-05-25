@@ -6,3 +6,10 @@ mdTestModule.component('seeColorCtrl', {
         this.user = { name: 'world' };
     }
 });
+
+mdTestModule.component('itemWithTooltip', {
+    template: '<span tooltip="simple tooltip here" tooltip-position="buttom" style="color:red;">ERROR<span>',
+    controller: function () {
+        
+    }
+});
