@@ -15,10 +15,11 @@
             </md-card-title>
 
             <md-card-content>
-                <div layout="row" layout-align="space-between center md-select-menu-container">
+                <!-- <div layout="row" layout-align="space-between center md-select-menu-container">
                     <span>What is your favorite weapon?</span>
-                    <md-select  ng-model="weapon" placeholder="Weapon" class="md-no-underline ">
-                        <md-option  value="axe" tooltip='simple tooltip here' tooltip-position='buttom'>Axe
+                    <md-select class="overlay" aria-hidden="false" ng-model="weapon" placeholder="Weapon"
+                        class="md-no-underline ">
+                        <md-option value="axe">Axe
                         </md-option>
                         <md-option value="sword">
                             <span>Sword </span>
@@ -26,50 +27,109 @@
                         </md-option>
                         <md-option value="wand">
                             <span>Wand </span>
-                            <div tooltip='{{info}}' tooltip-position='buttom'>V</div>
+                            <div class="logo-container">
+                                <div tooltip='{{info}}' tooltip-position='buttom'>V</div>
+                            </div>
                         </md-option>
                         <md-option value="pen">
-                            <span>Pen? 
+                            <span>Pen?
                         </md-option>
                     </md-select>
-                </div>
+                </div> -->
 
                 <div layout="row" layout-align="space-between center">
                     <span>What armor do you wear?</span>
-                    <md-select ng-model="armor" placeholder="Armor"
-                        class="md-no-underline" required md-no-asterisk="false">
-                        <md-option value="cloth">Cloth</md-option>
-                        <md-option value="leather">Leather</md-option>
-                        <md-option value="chain">Chainmail</md-option>
-                        <md-option value="plate">
-                            Plate
+                    <md-input-container style="overflow: visible !important;">
+                        <md-select style="overflow: visible !important;" ng-model="armor" placeholder="Armor"
+                            class="md-no-underline" required md-no-asterisk="false">
 
-                            <div class="logo">
-                                V
-                                <div class="tooltiptext" style="background-color: black;">
-                                        {{info}}
+                            <md-option value="cloth">Cloth</md-option>
+                            <md-option value="leather">Leather</md-option>
+                            <md-option value="chain">Chainmail</md-option>
+                            <md-option value="plate">
+                                Plate
+
+                                <div style="overflow: visible !important;" class="logo">
+                                    V
+                                    <div class="tooltiptext"
+                                        style="background-color: black;overflow: visible !important;">
+                                        <span><u><b>כלי תפוס</b></u></span></br>
+                                        <span>02/02/19 <b>החל מתאריך</b></span></br>
+                                        <span>09:00 <b>בשעה</b></span></br>
+                                        <span>02/02/19 <b>עד תאריך</b></span></br>
+                                        <span>11:00 <b>בשעה</b></span></br>
+                                        <span><b> ע"י</b>פולשים הלילה ללבנון</span></br>
+                                        <hr>
+                                        </hr>
+                                        <span>02/02/19 <b>החל מתאריך</b></span></br>
+                                        <span>09:00 <b>בשעה</b></span></br>
+                                        <span>02/02/19 <b>עד תאריך</b></span></br>
+                                        <span>11:00 <b>בשעה</b></span></br>
+                                        <span><b> ע"י</b>פולשים הלילה ללבנון </span></br>
+                                    </div>
                                 </div>
-                            </div>
+                            </md-option>
 
+                            <md-option value="i">Cloth</md-option>
+                            <md-option value="e">
+                                <div tooltip='{{info}}' tooltip-position='buttom'>V</div>
+                                Leather
+                            </md-option>
+                            <md-option value="d">Chainmail</md-option>
 
-
-                        </md-option>
-                    </md-select>
+                        </md-select>
+                    </md-input-container>
                 </div>
 
                 <div layout="row" layout-align="space-between center">
                     <span>How do you refresh your magic?</span>
-                    <md-select ng-model="drink" placeholder="Drink" class="md-no-underline">
-                        <md-option value="water">
+                    <md-input-container>
 
-                            <span> Water </span>
+                        <md-select ng-model="drink" placeholder="Drink" class="md-no-underline">
+                            <md-option value="water" ng-click="null">
 
-                        </md-option>
-                        <md-option value="juice">Juice</md-option>
-                        <md-option value="milk">Milk</md-option>
-                        <md-option value="wine">Wine</md-option>
-                        <md-option value="mead">Mead</md-option>
-                    </md-select>
+                                <span> Water </span>
+
+                            </md-option>
+                            <md-option value="juice" ng-click="null">Juice
+                                <md-icon style="pointer-events: visible">
+                                    a
+                                    <md-tooltip md-direction="right" class="tt-multiline">
+                                        <span><u><b>כלי תפוס</b></u></span></br>
+                                        <span>02/02/19 <b>החל מתאריך</b></span></br>
+                                        <span>09:00 <b>בשעה</b></span></br>
+                                        <span>02/02/19 <b>עד תאריך</b></span></br>
+                                        <span>11:00 <b>בשעה</b></span></br>
+                                        <span><b> ע"י</b>פולשים הלילה ללבנון</span></br>
+                                        <hr>
+                                        </hr>
+                                        <span>02/02/19 <b>החל מתאריך</b></span></br>
+                                        <span>09:00 <b>בשעה</b></span></br>
+                                        <span>02/02/19 <b>עד תאריך</b></span></br>
+                                        <span>11:00 <b>בשעה</b></span></br>
+                                        <span><b> ע"י</b>פולשים הלילה ללבנון </span></br>
+                                    </md-tooltip>
+                                </md-icon>
+                            </md-option>
+                            <md-option value="milk" ng-click="null">Milk
+                                <md-icon style="pointer-events: visible">
+                                    a
+                                    <md-tooltip md-direction="right" class="tt-multiline">
+                                        {{info}} </br> {{info}}
+                                    </md-tooltip>
+                                </md-icon>
+                            </md-option>
+                            <md-option value="wine" ng-click="null">Wine</md-option>
+                            <md-option value="mead" ng-click="null">Mead
+                                <md-icon style="pointer-events: visible">
+                                    a
+                                    <md-tooltip md-direction="left" class="tt-multiline">2016/04/08 09:45:02
+                                        09:45<br>04/08
+                                    </md-tooltip>
+                                </md-icon>
+                            </md-option>
+                        </md-select>
+                    </md-input-container>
                 </div>
             </md-card-content>
         </md-card>

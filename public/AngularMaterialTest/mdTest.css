@@ -117,11 +117,12 @@ button:hover {
 [tooltip]:hover::before {
     opacity: 1
 }
-/******************************************************/
-.input {
-    margin-left: 135px
-}
 
+/******************************************************/
+
+hr{
+    border-color: white; 
+}
 .logo-container {
     display: inline-table;
     width: 110px;
@@ -138,8 +139,8 @@ button:hover {
 
 .logo .tooltiptext {
     visibility: hidden;
-    font-size: 12px;
-    width: 245px;
+    font-size: 11px;
+    max-width: 130px;
     height: auto;
     background-color: black;
     color: lightgray;
@@ -148,18 +149,20 @@ button:hover {
     padding: 5px;
     position: absolute;
     z-index: 101;
-    left: 20%;
+    left: 25%;
+    top:25%;
     opacity: 0;
-    transition: opacity 0.3s;   
+    transition: opacity 0.3s;  
+    text-align: right; 
 }
 
 .logo .tooltiptext::after {
     content: "";
     position: absolute;
-    top: 35%;
+    top: 6%;
     z-index: 1011;
     right: 100%;
-    margin-top: -15px;
+    /* margin-top: -15px; */
     border-width: 5px;
     border-style: solid;
     border-color: transparent black transparent transparent;
@@ -171,27 +174,29 @@ button:hover {
     opacity: 1;
 }
 
-
-
-/******************************************************/
-.containerB {
-    float: left;
-    width: 100px;
-    height: 100px;
-    margin: 0 2px 2px 0;
+.text {
+    text-align: right;
+      margin-top: 12px;
+    margin-bottom: 12px;
+    margin-left: 8px;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: right;
+    line-height: 1.2em;
     position: relative;
     z-index: 1;
+  }
+
+  /***********************************/
+
+
+.tt-multiline{
+    height: auto !important;
+    word-wrap: break-word;
+    max-width: 150px;
+    white-space: pre-line;
 }
-.tooltipB:hover {
-    z-index: 2;
-    visibility: visible;
+.md-select-value{
+pointer-events: visible
 }
-.tooltipB {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    visibility: hidden;
-    background: #f00;
-    width: 100px;
-    height: 100px;
-}
+
